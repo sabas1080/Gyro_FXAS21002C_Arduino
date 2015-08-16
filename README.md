@@ -1,11 +1,11 @@
-FXAS21002CArduino
+FXAS21002C for Arduino
 ==================
 
 Arduino example for the FXAS21002C 3-Axis Digital Angular Rate
 Gyroscope
 
 # Test
-Exmaple beta
+Example beta
 
 # Autor
 Original sketch by: Kris Winer

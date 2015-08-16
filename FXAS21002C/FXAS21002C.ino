@@ -48,7 +48,7 @@
 Adafruit_PCD8544 display = Adafruit_PCD8544(9, 8, 7, 5, 6);
 
 // Define registers per Freescale Semiconductor, Inc.
-// FXAS21000 Data Sheet: Advance Information Rev 1.1, 10/2013 3-Axis, 14-bit Digital MEMS Gyroscope
+// FXAS21002C Data Sheet: Advance Information Rev 1.1, 10/2013 3-Axis, 14-bit Digital MEMS Gyroscope
 // Freescale Semiconductor Data Sheet
 #define STATUS           0x00
 #define DR_STATUS        0x07
@@ -374,7 +374,7 @@ display.display();
 
 // Initialize the FXAS21002C registers 
 // See the many application notes for more info on setting all of these registers:
-// http://www.freescale.com/webapp/sps/site/prod_summary.jsp?code=FXAS21000Q
+// http://cache.freescale.com/files/sensors/doc/data_sheet/FXAS21002.pdf
 // Feel free to modify any values, these are settings that work well for me.
 void initFXAS21002C()
 {
@@ -428,7 +428,7 @@ void FXAS21002CActive()
 }
 
 
-        void writeByte(uint8_t address, uint8_t subAddress, uint8_t data)
+void writeByte(uint8_t address, uint8_t subAddress, uint8_t data)
 {
   Wire.beginTransmission(address);  // Initialize the Tx buffer
   Wire.write(subAddress);           // Put slave register address in Tx buffer
@@ -436,7 +436,7 @@ void FXAS21002CActive()
   Wire.endTransmission();           // Send the Tx buffer
 }
 
-        uint8_t readByte(uint8_t address, uint8_t subAddress)
+uint8_t readByte(uint8_t address, uint8_t subAddress)
 {
   uint8_t data; // `data` will store the register data   
   Wire.beginTransmission(address);         // Initialize the Tx buffer
